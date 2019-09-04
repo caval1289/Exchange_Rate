@@ -23,6 +23,6 @@ function getCountriesInfo(data) {
             code: country.alpha3Code,
         };
     }).filter(country => {
-        return country.currencyCode != 'USD'
+        return country.currencyCode !== 'USD'
     });
 }
