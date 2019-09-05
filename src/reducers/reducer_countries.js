@@ -1,4 +1,5 @@
 import { GET_COUNTRIES } from '../actions/index';
+import { supportedCurrencyCode } from '../supportedCurrencies';
 
 const initialState = {
     countries: []
@@ -23,6 +24,6 @@ function getCountriesInfo(data) {
             code: country.alpha3Code,
         };
     }).filter(country => {
-        return country.currencyCode !== 'USD'
+        return supportedCurrencyCode.indexOf(country.currencyCode) > -1;
     });
 }
